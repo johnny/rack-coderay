@@ -10,7 +10,7 @@ begin
     gem.email = "phil@webficient.com"
     gem.homepage = "http://github.com/webficient/rack-coderay"
     gem.authors = ["Phil Misiowiec"]
-    gem.files = FileList['lib/**/*.rb']
+    gem.files = FileList['lib/**/*.rb', 'resources/*']
     gem.add_dependency 'coderay'
     gem.add_dependency 'hpricot'
   end

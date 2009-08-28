@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rack-coderay}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Phil Misiowiec"]
@@ -13,12 +13,12 @@ Gem::Specification.new do |s|
   s.description = %q{This Rack middleware component uses the CodeRay gem to automatically format code syntax by detecting a specific container in the final rendered markup.}
   s.email = %q{phil@webficient.com}
   s.extra_rdoc_files = [
-    "LICENSE",
-     "README.rdoc"
+    "README.rdoc"
   ]
   s.files = [
     "lib/rack/coderay.rb",
-     "lib/rack/coderay/parser.rb"
+     "lib/rack/coderay/parser.rb",
+     "resources/coderay.css"
   ]
   s.homepage = %q{http://github.com/webficient/rack-coderay}
   s.rdoc_options = ["--charset=UTF-8"]
