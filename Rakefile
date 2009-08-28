@@ -5,12 +5,14 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "rack-coderay"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Rack middleware that automatically formats code syntax using CodeRay gem}
+    gem.description = %Q{This Rack middleware component uses the CodeRay gem to automatically format code syntax by detecting a specific container in the final rendered markup.}
     gem.email = "phil@webficient.com"
-    gem.homepage = "http://github.com/philm/rack-coderay"
-    gem.authors = ["philm"]
-    # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
+    gem.homepage = "http://github.com/webficient/rack-coderay"
+    gem.authors = ["Phil Misiowiec"]
+    gem.files = FileList['lib/**/*.rb']
+    gem.add_dependency 'coderay'
+    gem.add_dependency 'hpricot'
   end
 
 rescue LoadError
@@ -36,9 +38,6 @@ rescue LoadError
     abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
   end
 end
-
-
-
 
 task :default => :test
 

@@ -1,0 +1,3 @@
+module RackCoderaySampleData
+
+end
