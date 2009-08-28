@@ -2,6 +2,7 @@ require 'coderay'
 require 'hpricot'
 
 module Rack::Coderay
+  # This class is the interface between Rack and the CodeRay gem
   class Parser
     
     # Defaults for the Coderay gem config

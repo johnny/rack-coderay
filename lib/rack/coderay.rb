@@ -1,6 +1,6 @@
 require 'rack'
 
-# = Coderay Syntax Highlighter Rack Appliance
+# = CodeRay Syntax Highlighter Rack Appliance
 #
 # Rack::Coderay parses text/html markup and replaces code with output
 # from the CodeRay gem (http://coderay.rubychan.de/), producing syntax highlighting. 

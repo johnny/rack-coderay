@@ -1,18 +1,81 @@
-= rack-coderay
+= CodeRay Syntax Highlighter for Rack
 
-Description goes here.
+Rack::Coderay parses text/html markup and replaces code with output
+from the CodeRay gem (http://coderay.rubychan.de/), producing syntax highlighting. 
+By default, this component looks for <pre lang="xxxx">...</pre>
+blocks, where 'xxxx' is any of the languages supported by CodeRay (e.g. 'ruby'). 
+See http://coderay.rubychan.de/doc/classes/CodeRay/Scanners.html
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+For more information about the Rack specification, check out http://rack.rubyforge.org
+
+== Installation
+
+Prerequisites:
+
+  -Rack gem (sudo gem install rack)
+  -CodeRay gem (sudo gem install coderay)
+
+From Gem:
+
+  $ sudo gem install webficient-rack-coderay
+
+With a local working copy:
+
+  $ git clone git://github.com/webficient/rack-coderay.git
+  $ rake build && sudo rake install
+
+== Usage
+
+Basic Usage
+-----------
+
+Rack::Coderay is implemented as a piece of Rack middleware and can be used with
+any Rack-based application. If your application includes a rackup (`.ru`) file
+or uses Rack::Builder to construct the application pipeline, simply require
+and use as follows:
+
+  require 'rack/coderay'
+
+  use Rack::Coderay
+  run app
+
+Using with Rails
+----------------
+
+Add this to your `config/environment.rb`:
+
+  # above Rails::Initializer block
+  require 'rack/coderay'
+
+  # inside Rails::Initializer block
+  config.middleware.use Rack::Coderay
+
+You should now see `Rack::Coderay` listed in the middleware pipeline:
+
+  rake middleware
+    
+Configuration Options
+---------------------
+
+To override the default markup trigger (<pre lang="xxxx">), you
+can pass in a css or xpath selector as the second argument:
+
+  # Rails example
+  config.middleware.use Rack::Coderay, "//div[@lang]"
+          
+To set additional CodeRay gem options, pass a hash as the third argument:
+
+  # Rails example
+  config.middleware.use Rack::Coderay, 
+    "//pre[@lang]", 
+    :line_numbers => :table
+
+Stylesheet
+----------
+You can grab the latest CSS from the CodeRay site at http://coderay.rubychan.de/stylesheets/coderay.css.
+
+A copy has been embedded in the Rack::Coderay gem under the /resources directory for your convenience.
 
 == Copyright
 
-Copyright (c) 2009 philm. See LICENSE for details.
+Copyright (c) 2009 Phil Misiowiec, Webficient LLC. See MIT-LICENSE for details.
