@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rack-coderay}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Phil Misiowiec"]
@@ -26,8 +26,7 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.5}
   s.summary = %q{Rack middleware that automatically formats code syntax using CodeRay gem}
   s.test_files = [
-    "test/rack_coderay_sample_data.rb",
-     "test/rack_coderay_test.rb",
+    "test/rack_coderay_test.rb",
      "test/test_helper.rb"
   ]
 
