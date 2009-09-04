@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rack-coderay}
-  s.version = "0.1.2"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Phil Misiowiec"]
-  s.date = %q{2009-08-28}
+  s.date = %q{2009-09-03}
   s.description = %q{This Rack middleware component uses the CodeRay gem to automatically format code syntax by detecting a specific container in the final rendered markup.}
   s.email = %q{phil@webficient.com}
   s.extra_rdoc_files = [
@@ -35,14 +35,17 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<coderay>, [">= 0"])
-      s.add_runtime_dependency(%q<hpricot>, [">= 0"])
+      s.add_runtime_dependency(%q<coderay>, [">= 0.8.312"])
+      s.add_runtime_dependency(%q<hpricot>, [">= 0.8.1"])
+      s.add_runtime_dependency(%q<rack>, [">= 1.0.0"])
     else
-      s.add_dependency(%q<coderay>, [">= 0"])
-      s.add_dependency(%q<hpricot>, [">= 0"])
+      s.add_dependency(%q<coderay>, [">= 0.8.312"])
+      s.add_dependency(%q<hpricot>, [">= 0.8.1"])
+      s.add_dependency(%q<rack>, [">= 1.0.0"])
     end
   else
-    s.add_dependency(%q<coderay>, [">= 0"])
-    s.add_dependency(%q<hpricot>, [">= 0"])
+    s.add_dependency(%q<coderay>, [">= 0.8.312"])
+    s.add_dependency(%q<hpricot>, [">= 0.8.1"])
+    s.add_dependency(%q<rack>, [">= 1.0.0"])
   end
 end
