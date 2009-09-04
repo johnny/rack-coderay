@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'rake'
 
 begin
@@ -11,8 +10,9 @@ begin
     gem.homepage = "http://github.com/webficient/rack-coderay"
     gem.authors = ["Phil Misiowiec"]
     gem.files = FileList['lib/**/*.rb', 'resources/*']
-    gem.add_dependency 'coderay'
-    gem.add_dependency 'hpricot'
+    gem.add_dependency 'coderay', '>= 0.8.312'
+    gem.add_dependency 'hpricot', '>= 0.8.1'
+    gem.add_dependency 'rack', '>= 1.0.0'
   end
 
 rescue LoadError
